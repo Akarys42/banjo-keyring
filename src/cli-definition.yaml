@@ -1,0 +1,4 @@
+## CLI definition used by Clap
+name: banjo
+version: "0.1.0-dev"
+author: Matteo Bertucci <matteobertucci2004@gmail.com>

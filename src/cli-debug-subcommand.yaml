@@ -1,0 +1,9 @@
+## CLI definition used by Clap
+# This subcommand is only added if the binary is built with enable_debug.
+
+name: debug
+about: Debugging features [NOT SUITABLE FOR PRODUCTION]
+subcommands:
+  subcommands:
+    - fakeinit:
+        about: Generate a fake .banjo directory
