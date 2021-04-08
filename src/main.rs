@@ -5,8 +5,7 @@ extern crate clap;
 
 use clap::{App, SubCommand};
 use crate::logging::init_cli_logging;
-use simplelog::LevelFilter;
-use log::warn;
+use log::{debug, warn, LevelFilter};
 
 fn main() {
     let cli_yaml = load_yaml!("cli-definition.yaml");
@@ -19,10 +18,13 @@ fn main() {
     #[cfg(feature = "enable_debug")]
     let app = app.subcommand(SubCommand::from_yaml(debug_cli_yaml));
 
-    init_cli_logging(LevelFilter::Warn).expect("Failed to initialize logging.");
+    let matches = app.get_matches();
 
+    init_cli_logging(
+        if matches.is_present("verbose") {LevelFilter::Debug} else {LevelFilter::Info}
+    ).expect("Failed to initialize logging.");
+
+    debug!("Logging successfully initialized.");
     #[cfg(feature = "enable_debug")]
     warn!("Debug mode is enabled! NOT SUITABLE FOR PRODUCTION.");
-
-    app.get_matches();
 }

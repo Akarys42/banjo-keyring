@@ -2,3 +2,8 @@
 name: banjo
 version: "0.1.0-dev"
 author: Matteo Bertucci <matteobertucci2004@gmail.com>
+args:
+  - verbose:
+      short: v
+      long: verbose
+      help: Increase the verbosity level.
