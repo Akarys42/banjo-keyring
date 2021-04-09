@@ -1,6 +1,7 @@
 mod logging;
 mod keyblock;
 mod utils;
+mod debug;
 
 #[macro_use]
 extern crate clap;
