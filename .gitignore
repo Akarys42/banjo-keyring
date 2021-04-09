@@ -10,6 +10,6 @@ Cargo.lock
 **/*.rs.bk
 
 
-# Added by cargo
-
-/target
+# IDE files
+.idea
+.DS_Store
