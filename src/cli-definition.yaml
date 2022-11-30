@@ -1,7 +1,7 @@
 ## CLI definition used by Clap
 name: banjo
 version: "0.1.0-dev"
-author: Matteo Bertucci <matteobertucci2004@gmail.com>
+author: Amber Bertucci <amber@akarys.me>
 args:
   - verbose:
       short: v
